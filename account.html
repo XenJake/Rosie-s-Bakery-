@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rosie's Bakery - Account</title>
+<style>
+  body { font-family: Arial, sans-serif; background:#fffaf0; margin:0; }
+  header, footer { background:#f4c2c2; padding:20px; text-align:center; }
+  nav a { margin:0 10px; text-decoration:none; font-weight:bold; color:#333; }
+  .container { max-width:600px; margin:20px auto; padding:10px; text-align:center; }
+  button { background:#c94c4c; color:white; border:none; padding:10px 20px; margin:5px; cursor:pointer; }
+  button:hover { background:#a63a3a; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Rosie's Bakery</h1>
+  <nav>
+    <a href="home.html">Home</a> |
+    <a href="menu.html">Menu</a> |
+    <a href="order.html">Order</a> |
+    <a href="account.html">Account</a> |
+    <a href="contact.html">Contact</a>
+    <button onclick="logout()" style="background:#fff;color:#c94c4c;padding:5px 10px;margin-left:10px;">Logout</button>
+  </nav>
+</header>
+
+<div class="container">
+  <h2>Welcome, <span id="username"></span>!</h2>
+  <button onclick="alert('View Orders coming soon!')">My Orders</button>
+  <button onclick="alert('Saved Addresses coming soon!')">Saved Addresses</button>
+</div>
+
+<footer>
+  <p>© 2025 Rosie's Bakery</p>
+</footer>
+
+<script>
+const loggedEmail = localStorage.getItem('loggedIn');
+if(!loggedEmail){ window.location.href = 'login.html'; }
+
+const users = JSON.parse(localStorage.getItem('users') || '[]');
+const user = users.find(u=>u.email===loggedEmail);
+document.getElementById('username').innerText = user ? user.name : '';
+
+function logout(){
+  localStorage.removeItem('loggedIn');
+  window.location.href = 'login.html';
+}
+</script>
+
+</body>
+</html>

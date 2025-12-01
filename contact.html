@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rosie's Bakery - Contact</title>
+<style>
+  body { font-family: Arial, sans-serif; background:#fffaf0; margin:0; }
+  header, footer { background:#f4c2c2; padding:20px; text-align:center; }
+  nav a { margin:0 10px; text-decoration:none; font-weight:bold; color:#333; }
+  .container { max-width:600px; margin:20px auto; padding:10px; }
+  input, textarea { width:100%; padding:8px; margin:5px 0 10px 0; }
+  button { background:#c94c4c; color:white; border:none; padding:10px 20px; cursor:pointer; }
+  button:hover { background:#a63a3a; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Rosie's Bakery</h1>
+  <nav>
+    <a href="home.html">Home</a> |
+    <a href="menu.html">Menu</a> |
+    <a href="order.html">Order</a> |
+    <a href="account.html">Account</a> |
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<div class="container">
+  <h2>Contact Us</h2>
+  <p>WhatsApp: <a href="https://wa.me/233558025528" target="_blank">+233 55 802 5528</a></p>
+  <p>Phone: +233 55 802 5528</p>
+  <p>Working Hours: Mon-Sat 8AM - 7PM</p>
+
+  <h3>Send Us a Message</h3>
+  <form onsubmit="alert('Message sent!'); return false;">
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Email" required>
+    <textarea placeholder="Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+
+  <h3>Location</h3>
+  <iframe src="https://maps.google.com/maps?q=Accra&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="300" style="border:0;"></iframe>
+</div>
+
+<footer>
+  <p>© 2025 Rosie's Bakery</p>
+</footer>
+
+<script>
+if(!localStorage.getItem('loggedIn')){ window.location.href='login.html'; }
+</script>
+
+</body>
+</html>

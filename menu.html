@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rosie's Bakery - Menu</title>
+<style>
+  body { font-family: Arial, sans-serif; background:#fffaf0; margin:0; }
+  header, footer { background:#f4c2c2; padding:20px; text-align:center; }
+  nav a { margin:0 10px; text-decoration:none; font-weight:bold; color:#333; }
+  .container { max-width:800px; margin:20px auto; padding:10px; }
+  h2,h3 { color:#c94c4c; }
+  ul { list-style:none; padding-left:0; }
+  li { margin-bottom:8px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Rosie's Bakery</h1>
+  <nav>
+    <a href="home.html">Home</a> |
+    <a href="menu.html">Menu</a> |
+    <a href="order.html">Order</a> |
+    <a href="account.html">Account</a> |
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<div class="container">
+  <h2>Price List 1 — Baked Goods</h2>
+  <ul>
+    <li><b>Cupcakes:</b> Dozen – GHS 300 (Chocolate, Vanilla, Strawberry, Confetti, Red Velvet)</li>
+    <li><b>Muffins:</b> Banana bread muffins, Blueberry muffins</li>
+    <li><b>Cakes:</b> 5" (2 layers) + 5 cupcakes – GHS 200, 8" (2 layers) – GHS 200, 5" cake – GHS 150</li>
+    <li><b>Brownies:</b> Slice – GHS 30</li>
+    <li><b>Loaf Cakes:</b> Banana Bread – GHS 80, Banana w/ Chocolate Chips – GHS 100, Carrot Cake – GHS 85, Fruit Cake – GHS 85</li>
+    <li><b>Cookies:</b> Dozen – GHS 65 (Chocolate chip, Sugar cookies w/ royal icing, Shortbread)</li>
+  </ul>
+
+  <h2>Price List 2 — Small Chops + Chicken</h2>
+  <ul>
+    <li>Spring rolls – GHS 2</li>
+    <li>Samosas – GHS 2</li>
+    <li>Meat pies – GHS 10</li>
+    <li>Chicken fried – GHS 10, Chicken grilled – GHS 12</li>
+    <li>Small Chops Box – GHS 50 (2 spring rolls, 2 samosas, 1 chicken piece, 3 cookies, 1 pie)</li>
+  </ul>
+
+  <h2>Price List 3 — Yogurt & Desserts</h2>
+  <ul>
+    <li>Frozen yogurt cup – GHS 30</li>
+    <li>Plain Greek yogurt – available</li>
+  </ul>
+</div>
+
+<footer>
+  <p>© 2025 Rosie's Bakery</p>
+</footer>
+
+<script>
+if(!localStorage.getItem('loggedIn')){
+  window.location.href = 'login.html';
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rosie's Bakery - Order</title>
+<style>
+  body { font-family: Arial, sans-serif; background:#fffaf0; margin:0; }
+  header, footer { background:#f4c2c2; padding:20px; text-align:center; }
+  nav a { margin:0 10px; text-decoration:none; font-weight:bold; color:#333; }
+  .container { max-width:600px; margin:20px auto; padding:10px; }
+  input, textarea, select { width:100%; padding:8px; margin:5px 0 15px 0; }
+  label { font-weight:bold; display:block; }
+  button { background:#c94c4c; color:white; border:none; padding:10px 20px; cursor:pointer; }
+  button:hover { background:#a63a3a; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Rosie's Bakery</h1>
+  <nav>
+    <a href="home.html">Home</a> |
+    <a href="menu.html">Menu</a> |
+    <a href="order.html">Order</a> |
+    <a href="account.html">Account</a> |
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<div class="container">
+  <h2>Place Your Order</h2>
+  <form id="orderForm">
+    <label>Full Name</label>
+    <input type="text" id="name" required>
+
+    <label>Phone Number</label>
+    <input type="text" id="phone">
+
+    <label>Delivery Address</label>
+    <textarea id="address" required></textarea>
+
+    <label>Order Details</label>
+    <textarea id="items" placeholder="e.g., 1 dozen cupcakes, 2 meat pies" required></textarea>
+
+    <label>Extra Notes</label>
+    <textarea id="notes" placeholder="e.g., cake design, flavors"></textarea>
+
+    <button type="submit">Submit Order via WhatsApp</button>
+  </form>
+</div>
+
+<footer>
+  <p>© 2025 Rosie's Bakery</p>
+</footer>
+
+<script>
+if(!localStorage.getItem('loggedIn')){
+  window.location.href = 'login.html';
+}
+
+document.getElementById("orderForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  const name = encodeURIComponent(document.getElementById("name").value);
+  const phone = encodeURIComponent(document.getElementById("phone").value);
+  const address = encodeURIComponent(document.getElementById("address").value);
+  const items = encodeURIComponent(document.getElementById("items").value);
+  const notes = encodeURIComponent(document.getElementById("notes").value);
+
+  const message = `Hello Rosie! You have a new order:%0A%0AName: ${name}%0APhone: ${phone}%0AAddress: ${address}%0A%0AOrder Details:%0A${items}%0A%0ANotes:%0A${notes}%0A%0APlease confirm availability and delivery.`;
+  
+  const whatsappURL = `https://wa.me/233558025528?text=${message}`;
+  window.open(whatsappURL, "_blank");
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rosie's Bakery - Home</title>
+<style>
+  body { font-family: Arial, sans-serif; background:#fffaf0; margin:0; }
+  header, footer { background:#f4c2c2; padding:20px; text-align:center; }
+  nav a { margin: 0 10px; text-decoration:none; font-weight:bold; color:#333; }
+  .container { max-width:800px; margin:20px auto; text-align:center; }
+  button { background:#c94c4c; color:white; border:none; padding:10px 20px; cursor:pointer; margin:10px; }
+  button:hover { background:#a63a3a; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Rosie's Bakery</h1>
+  <nav>
+    <a href="home.html">Home</a> |
+    <a href="menu.html">Menu</a> |
+    <a href="order.html">Order</a> |
+    <a href="account.html">Account</a> |
+    <a href="contact.html">Contact</a>
+    <button onclick="logout()" style="background:#fff;color:#c94c4c;padding:5px 10px;margin-left:10px;">Logout</button>
+  </nav>
+</header>
+
+<div class="container">
+  <h2>Welcome to Rosie's Bakery!</h2>
+  <p>Order Fresh, Delicious Treats Today!</p>
+  <a href="order.html"><button>Order Now</button></a>
+  <a href="menu.html"><button>View Menu</button></a>
+</div>
+
+<footer>
+  <p>© 2025 Rosie's Bakery | All rights reserved</p>
+</footer>
+
+<script>
+// redirect to login if not logged in
+if(!localStorage.getItem('loggedIn')){
+  window.location.href = 'login.html';
+}
+
+function logout(){
+  localStorage.removeItem('loggedIn');
+  window.location.href = 'login.html';
+}
+</script>
+
+</body>
+</html>
